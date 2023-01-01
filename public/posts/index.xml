@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arnab Thakuria</title>
-    <link>http://arnab.thkuria.me/</link>
-    <description>Recent content on Arnab Thakuria</description>
+    <title>Posts on Arnab Thakuria</title>
+    <link>http://arnab.thkuria.me/posts/</link>
+    <description>Recent content in Posts on Arnab Thakuria</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sun, 01 Jan 2023 18:00:21 +0530</lastBuildDate><atom:link href="http://arnab.thkuria.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 18:00:21 +0530</lastBuildDate><atom:link href="http://arnab.thkuria.me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HelloWorld</title>
       <link>http://arnab.thkuria.me/posts/helloworld/</link>
