@@ -1,0 +1,6 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke
+[submodule "ezhil"]
+	path = ezhil
+	url = https://github.com/vividvilla/ezhil.git
