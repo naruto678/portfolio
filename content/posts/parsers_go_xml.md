@@ -1,7 +1,6 @@
 ---
 title: "Writing xml parser from scratch in golang"
 date: 2023-01-09T02:31:54+05:30
-draft: false
 ---
 
 ### Introduction 
@@ -18,8 +17,8 @@ So enough philosophical talk , let's get down to business .
 
 In this series we will build a fairly simple xml parser and not a fully-fledged one like ([JAXB](https://docs.oracle.com/javase/tutorial/jaxb/intro/index.html) or [SAX](https://www.baeldung.com/java-sax-parser)). We will slowly ramp up the grammar and hopefully we can get a bit close to the original spec 
 
- First I would like to give a bit of a tutorial of BNF(Backus Naur Form) and CFG and some of the terms like lexemes, tokens and then we can get started with the implementation . if you are aware of these terms , feel free to jump around. 
 
+ First I would like to give a bit of a tutorial of BNF(Backus Naur Form) and CFG and some of the terms like lexemes, tokens and then we can get started with the implementation . if you are aware of these terms , feel free to jump around. 
 
 ### Some prerequisite ideas and concepts and a quick refresher
 ------------------------------------------
@@ -355,11 +354,6 @@ return curr_node, fmt.Errorf("expected < . got %s", p.Peek().Name)
 {{< / highlight >}}
 
 Writing a printer for the AST
-
-{{< highlight go "linenos=table,linenostart=1" >}}
-
-
-{{< / highlight >}}
 As always writing tests is a good idea 
 ------------
 test file 
