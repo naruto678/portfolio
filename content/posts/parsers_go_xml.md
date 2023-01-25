@@ -32,7 +32,7 @@ A lexer scans through each character in the input source file and then chunks th
 
 Whereas you can imagine a token being something like this : 
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 type Token struct{
 	Lexeme string 
 	TokenType TokenType
@@ -80,7 +80,7 @@ we have
 ```
 In addition to this we would have a **EOF** token type to mark the end of our parsing 
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 
 type TokenType byte
 
@@ -122,7 +122,7 @@ func EOF() Token {
 {{< / highlight >}}
 
 Here we have defined utility functions for creating tokens . Let's go to the lexer
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 
 func Lexer(source string) []Token {
 	var tokens []Token
@@ -166,7 +166,7 @@ In the above function the lexer goes through character by character and emits to
 
 Writing some tests is always a good idea . 
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 func TestLexer(t *testing.T) {
 	xml_source := "<A>FirstTest</A>"
 	tokens := Lexer(xml_source)
@@ -204,7 +204,7 @@ Since we do not care about having stuff like attributes inside our tag , this sh
 
 Keeping the above rules in mind , we can start with a skeleton of something like this 
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 
 type Parser struct{
 	// some fields 
@@ -227,7 +227,7 @@ Let's start fleshing out the details
 
 We define a xml node as follows 
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 type Node struct {
 	Name      string
 	Parent    *Node
@@ -247,7 +247,7 @@ func NewNode(Name string, Parent Node) Node {
 
 Create a new parser 
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 type Parser struct {
 	Idx    int
 	Tokens []Token
@@ -307,7 +307,7 @@ func (p *Parser) Parse() (Node, error) {
 
 The parse method is the place where we put the logic for creating the parse tree/AST
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 func (p *Parser) Node(parent Node) (Node, error) {
 var curr_node Node
 if p.GetCurrentToken().TokenType == LPAREN {
@@ -336,8 +336,7 @@ if p.GetCurrentToken().TokenType == LPAREN {
 		 p.GetCurrentToken().TokenType == SLASH {
 			closing_symbol_name := p.GetCurrentToken()
 			if curr_node.Name != closing_symbol_name.Literal {
-				return curr_node, fmt.Errorf("closing tag does not match .
-		expected [%s] got [%s]", curr_node.Name, closing_symbol_name.Literal)
+				return curr_node, fmt.Errorf("closing tag does not match .expected [%s] got [%s]", curr_node.Name, closing_symbol_name.Literal)
 			}
 			if p.GetCurrentToken().TokenType != RPAREN {
 				return curr_node, fmt.Errorf("expected > got [%s]",
@@ -374,7 +373,7 @@ test file
 
 ```
 
-{{< highlight go "linenos=table,linenostart=1" >}}
+{{< highlight go "linenos=inline,linenostart=1" >}}
 
 func (p *Parser) Print(printer Printer) {
 	printer.Print()
