@@ -13,6 +13,7 @@ __________
 
 ### Default
 - [Venture-beat](https://venturebeat.com/data-infrastructure/30-startups-that-show-how-open-source-ate-the-world-in-2021/)
+- [Andrew-kelly-blog](https://andrewkelley.me/post/zig-cc-powerful-drop-in-replacement-gcc-clang.html)
 
 
 ### Defautl 
